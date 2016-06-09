@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Experiment</title>
+    <style media="screen">
+      document, body {
+        margin: 0;
+        padding: 0;
+      }
+      #view {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="html3DView" style="display:none;"></div>
+    <div id="view"></div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="node_modules/three/build/three.min.js" charset="utf-8"></script>
+    <script src="node_modules/threejs-htmlRenderer/dist/threejs-htmlrenderer.min.js" charset="utf-8"></script>
+    <script src="vendor/CSS3DRenderer.js" charset="utf-8"></script>
+    <script src="vendor/OrbitControls.js" charset="utf-8"></script>
+
+    <script src="dist/bundle.js" charset="utf-8"></script>
+  </body>
+</html>
