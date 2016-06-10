@@ -1,19 +1,21 @@
 import createMeshes from './meshes';
+import { initPointerLock } from './pointerLock';
+import { initControls } from './controls';
 
 export default function() {
+  initControls();
+  initPointerLock();
   //camera
-  var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
-  camera.position.z = 400
-
-  //controls
-  var controls = new THREE.OrbitControls(camera);
-  controls.rotateSpeed = 1.0;
-  controls.zoomSpeed = 1.2;
-  controls.panSpeed = 0.8;
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+  camera.position.y = 10;
 
   //scene
   var scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0xd8d0d1, 0, 950);
+
+  //controls
+  var controls = new THREE.PointerLockControls(camera);
+  scene.add(controls.getObject());
 
   //HemisphereLight
   var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
