@@ -1,10 +1,10 @@
-import createMeshes from './meshes';
 import { initPointerLock } from './pointerLock';
 import { initControls } from './controls';
 
 export default function() {
   initControls();
   initPointerLock();
+
   //camera
   var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
   camera.position.y = 10;
@@ -23,8 +23,6 @@ export default function() {
 
   var axisHelper = new THREE.AxisHelper( 5 );
   scene.add( axisHelper );
-
-  createMeshes(scene);
 
   //WebGL Renderer
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
